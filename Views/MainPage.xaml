@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prodygytek_Kapture_App.Views.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*">
+        <Grid BackgroundColor="#512BD4" Padding="10">
+            <Label 
+                Text="Inicio"
+                FontSize="25"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1" Padding="10">
+            <StackLayout>
+                <Label Text="Lista de Formularios" FontSize="Large" />
+                <ListView x:Name="FormListView" ItemSelected="OnFormSelected" VerticalOptions="FillAndExpand" RowHeight="90">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}" FontSize="22" VerticalOptions="Center" TextColor="#512BD4"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Label Text="Usuarios Asignados" FontSize="Large" Margin="0,20,0,0" />
+                <ListView x:Name="UserListView" VerticalOptions="FillAndExpand" RowHeight="90">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}" FontSize="22" VerticalOptions="Center" TextColor="#512BD4"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button Text="Ir al Formulario" 
+                        x:Name="NavigateButton" 
+                        
+                        Clicked="OnNavigateButtonClicked" 
+                        BackgroundColor="#3BE477" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="End" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

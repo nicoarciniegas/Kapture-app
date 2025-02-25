@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prodygytek_Kapture_App.Views.Forms"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*">
+        <Grid BackgroundColor="#512BD4" Padding="10">
+            <Label 
+                Text="Formulario"
+                FontSize="25"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout  Padding="20" Spacing="10" >
+                <Image
+                    Source="dotnet_bot.png"
+                    HeightRequest="150"
+                    Aspect="AspectFit"/>
+                <Frame
+                    BorderColor="Purple"
+                    CornerRadius="10"
+                    Padding="25"
+                    Margin="10">
+                    <WebView x:Name="webView"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"/>
+                </Frame>
+                <Button
+                    Text="Guardar"
+                    BackgroundColor="#3BE477"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="OnGuardarClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"/>
+                <Button
+                    Text="Cargar"
+                    BackgroundColor="#3BE477"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="OnCargarClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
